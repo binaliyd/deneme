@@ -1,50 +1,96 @@
-<!-- Başlık -->
-# Merhaba, Benim Adım [Adınız]
 
-## 🚀 Hakkımda
+3. Kontrol Yapıları
+Swift programlama dilinde, programın akışını kontrol etmek için çeşitli yapılar kullanılır. Bu yapılar, programın belirli koşullara göre farklı komutlar yürütmesini sağlar. Aşağıda, Swift'in kontrol yapıları detaylı bir şekilde açıklanmıştır.
 
-Ben [Adınız], [Şehir, Ülke] tabanlı bir [İş veya Eğitim Alanınız] ile uğraşan bir [İş veya Eğitim Durumu] öğrencisi/uzmanıyım. [Belirli Bir İlgi veya Yetenek Alanınız] konusunda özel ilgiye sahibim ve bu alanda [Belirli Bir Proje veya Deneyim] deneyimim var.
+3.1 If ve Else
+Swift'te if ve else ifadeleri, belirli bir koşulun doğru olup olmadığını kontrol etmek için kullanılır. Koşul doğru ise if bloğu içindeki kodlar, yanlış ise else bloğu içindeki kodlar çalıştırılır.
 
-## 🛠️ Teknolojiler ve Araçlar
+Örnek Kullanım:
+swift
+Copy code
+var yas = 20
+if yas >= 18 {
+    print("Reşit.")
+} else {
+    print("Reşit değil.")
+}
+3.2 Guard
+guard ifadesi, if ifadesine benzer bir şekilde koşulları kontrol eder, ancak bir koşulun doğru olmadığı durumlarda erken çıkış sağlamak için kullanılır. guard'ın her zaman bir else bloğu olmalıdır, bu blok koşul yanlış olduğunda çalıştırılır.
 
-Aşağıda bazı kullandığım teknolojileri ve araçları bulabilirsiniz:
+Örnek Kullanım:
+swift
+Copy code
+func kullaniciDogrula(kullaniciAdi: String?) {
+    guard let kullaniciAdi = kullaniciAdi else {
+        print("Kullanıcı adı girilmemiş.")
+        return
+    }
+    print("Kullanıcı adı: \(kullaniciAdi)")
+}
+3.3 Switch
+switch ifadesi, bir değişkenin birden fazla olası durumunu kontrol etmek için kullanılır. Her durum case anahtar kelimesi ile belirtilir ve switch ifadesi değişkenin değerine göre uygun case bloğunu çalıştırır.
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
+Örnek Kullanım:
+swift
+Copy code
+let meyve = "elma"
+switch meyve {
+case "muz":
+    print("Bu bir muz.")
+case "elma":
+    print("Bu bir elma.")
+default:
+    print("Tanınmayan meyve.")
+}
+3.4 For-in Döngüsü
+for-in döngüsü, bir koleksiyon (dizi, sözlük, aralık vs.) üzerinde yineleme yapmak için kullanılır. Her yinelemede koleksiyondan bir eleman alınır ve döngü içindeki kodlar bu eleman ile çalıştırılır.
 
-## 🌱 Şu Anda Öğrenmekte Olduğum
+Örnek Kullanım:
+swift
+Copy code
+let sayilar = [1, 2, 3, 4, 5]
+for sayi in sayilar {
+    print(sayi)
+}
+3.5 While Döngüsü
+while döngüsü, belirli bir koşul doğru olduğu sürece yürütülür. Koşul yanlış olduğunda döngü sona erer.
 
-- [Belirli Bir Dil veya Teknoloji]
-- [Belirli Bir Framework veya Kütüphane]
+Örnek Kullanım:
+swift
+Copy code
+var sayi = 5
+while sayi > 0 {
+    print(sayi)
+    sayi -= 1
+}
+3.6 Repeat-While Döngüsü
+repeat-while döngüsü, while döngüsüne benzer, ancak koşul döngünün sonunda kontrol edilir. Bu, döngü içindeki kodların en az bir kez çalıştırılmasını garanti eder.
 
-## 📊 GitHub İstatistikleri
+Örnek Kullanım:
+swift
+Copy code
+var counter = 5
+repeat {
+    print(counter)
+    counter -= 1
+} while counter > 0
+3.7 Break ve Continue
+break ifadesi, içinde bulunduğu döngüyü veya switch ifadesini derhal sonlandırır. continue ifadesi ise, döngünün mevcut yinelemesini sonlandırır ve döngünün bir sonraki yinelemesine geçer.
 
-![GitHub İstatistikleri](https://github-readme-stats.vercel.app/api?username=github-username&show_icons=true&hide_title=true&count_private=true&hide=prs,issues,contribs&theme=radical)
+Örnek Kullanım:
+swift
+Copy code
+for i in 1...10 {
+    if i == 5 {
+        break
+    }
+    print(i)
+}
 
-## 📫 Benimle İletişime Geçin
-
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/linkedin-username)
-[![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/twitter-username)
-[![Website](https://img.shields.io/badge/-Website-41BDF5?style=flat&logo=google-chrome&logoColor=white)](https://www.yourwebsite.com)
-
-## 🎨 Renk Paleti
-
-Bu README dosyasındaki renk paleti:
-
-- Başlık Arkaplan: `#1A1A1A`
-- Başlık Yazı Rengi: `#FFFFFF`
-- Ana İçerik Arkaplan: `#2E2E2E`
-- Ana İçerik Yazı Rengi: `#FFFFFF`
-- Buton Arkaplan: `#4CAF50`
-- Buton Yazı Rengi: `#FFFFFF`
-
-## 🚧 Katkıda Bulunma
-
-Eğer bu README şablonunu iyileştirmek veya başka bir öneriniz varsa, lütfen bir pull isteği gönderin!
-
+for i in 1...10 {
+    if i % 2 == 0 {
+        continue
+    }
+    print(i)
+}
+Swift'in kontrol yapıları, program akışını yönlendirmede esneklik ve güç sağlar. Uygun yapıları kullanarak, kodunuzu daha okunabilir, etkili ve hata yapma olasılığını azaltacak şekilde düzenleyebilirsiniz. Bu yapıların her birinin doğru kullanımı, Swift programlama becerilerinizi geliştirmenize yardımcı olacaktır.
